@@ -1,0 +1,846 @@
+  [1m[36m (11.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (11.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateProducts (20131017094616)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "price" decimal(8,2), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (31.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20131017094616"]]
+  [1m[36m (3.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2013-10-17 15:22:37 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [GET] "/assets/rails.png"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/surendra/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/surendra/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/surendra/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/surendra/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /Users/surendra/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.3ms)
+  Rendered /Users/surendra/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (29.5ms)
+  Rendered /Users/surendra/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (63.6ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2013-10-17 15:23:09 +0530
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 1585ms (Views: 1520.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-17 15:23:10 +0530
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2013-10-17 15:23:10 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-10-17 15:23:10 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-17 15:23:10 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-17 15:23:10 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-10-17 15:23:11 +0530
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2013-10-17 15:23:11 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-17 15:23:11 +0530
+
+
+Started GET "/products/new" for 127.0.0.1 at 2013-10-17 15:27:46 +0530
+Processing by ProductsController#new as HTML
+  Rendered products/_form.html.erb (159.1ms)
+  Rendered products/new.html.erb within layouts/application (161.7ms)
+Completed 200 OK in 181ms (Views: 179.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2013-10-17 15:27:57 +0530
+Processing by ProductsController#new as HTML
+  Rendered products/_form.html.erb (3.8ms)
+  Rendered products/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-17 15:27:57 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-10-17 15:27:57 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-17 15:27:57 +0530
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2013-10-17 15:27:57 +0530
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2013-10-17 15:27:57 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-10-17 15:27:57 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-17 15:27:57 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-17 15:27:57 +0530
+
+
+Started POST "/products" for 127.0.0.1 at 2013-10-17 15:28:41 +0530
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ztmFOhiNUG7Iaui3TxowVVdWtucM1sU8Y0UZVIFzytE=", "product"=>{"title"=>"kindle", "description"=>"android tablet from wonderful amazon.", "price"=>"200"}, "commit"=>"Create Product"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (92.2ms)[0m  INSERT INTO "products" ("created_at", "description", "price", "title", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Thu, 17 Oct 2013 09:58:41 UTC +00:00], ["description", "android tablet from wonderful amazon."], ["price", #<BigDecimal:7fff4c7d9260,'0.2E3',9(18)>], ["title", "kindle"], ["updated_at", Thu, 17 Oct 2013 09:58:41 UTC +00:00]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://surendra.com:3000/products/1
+Completed 302 Found in 100ms (ActiveRecord: 93.7ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2013-10-17 15:28:42 +0530
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered products/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 35ms (Views: 31.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-17 15:28:42 +0530
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2013-10-17 15:28:42 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-10-17 15:28:42 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-17 15:28:42 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-10-17 15:28:42 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-17 15:28:42 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-17 15:28:42 +0530
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2013-10-17 15:28:42 +0530
+
+
+Started GET "/products" for 127.0.0.1 at 2013-10-17 15:28:47 +0530
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (11.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (54.7ms)[0m  DELETE FROM "products"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (134.7ms)[0m  INSERT INTO "products" ("created_at", "description", "price", "title", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Thu, 17 Oct 2013 10:10:48 UTC +00:00], ["description", "\n\t\t<p>\n\t\tRuby is the fastest growing and most exciting dynamic languages\n\t\tout there. If you need need to get working programs delivedred\n\t\tfast,you should add Ruby to your toolbox.\n\t\t</p>\n\t"], ["price", #<BigDecimal:7fb2591f1248,'0.495E2',18(45)>], ["title", "Programming ruby"], ["updated_at", Thu, 17 Oct 2013 10:10:48 UTC +00:00]]
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/products" for 127.0.0.1 at 2013-10-17 17:27:41 +0530
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (48.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (133.6ms)
+Completed 200 OK in 335ms (Views: 227.0ms | ActiveRecord: 48.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-17 17:27:42 +0530
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2013-10-17 17:27:42 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-10-17 17:27:42 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-17 17:27:42 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-10-17 17:27:42 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-17 17:27:42 +0530
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2013-10-17 17:27:42 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-17 17:27:42 +0530
+
+
+Started GET "/products/2" for 127.0.0.1 at 2013-10-17 17:31:55 +0530
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  Rendered products/show.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/2" for 127.0.0.1 at 2013-10-17 17:32:05 +0530
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", "2"]]
+  Rendered products/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.1ms)
+  [1m[36mActiveRecord::SchemaMigration Load (9.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateProducts (20131017094616)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (14.9ms)[0m  DROP TABLE "products"
+  [1m[36mSQL (23.9ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20131017094616'[0m
+  [1m[35m (3.6ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateProducts (20131017094616)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "price" decimal(8,2), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (2.9ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20131017094616"]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (3.9ms)[0m  DELETE FROM "products"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (42.3ms)[0m  INSERT INTO "products" ("created_at", "description", "price", "title", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Thu, 17 Oct 2013 12:05:11 UTC +00:00], ["description", "\n\t\t<p>\n\t\tRuby is the fastest growing and most exciting dynamic languages\n\t\tout there. If you need need to get working programs delivedred\n\t\tfast,you should add Ruby to your toolbox.\n\t\t</p>\n\t"], ["price", #<BigDecimal:7f92f691eed0,'0.495E2',18(45)>], ["title", "Programming ruby"], ["updated_at", Thu, 17 Oct 2013 12:05:11 UTC +00:00]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (4.4ms)[0m  INSERT INTO "products" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", Thu, 17 Oct 2013 12:10:18 UTC +00:00], ["updated_at", Thu, 17 Oct 2013 12:10:18 UTC +00:00]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "products" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", Thu, 17 Oct 2013 12:11:29 UTC +00:00], ["updated_at", Thu, 17 Oct 2013 12:11:29 UTC +00:00]]
+  [1m[35m (1.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mProduct Exists (0.2ms)[0m  SELECT 1 AS one FROM "products" WHERE "products"."title" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35mProduct Exists (0.1ms)[0m  SELECT 1 AS one FROM "products" WHERE "products"."title" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mProduct Exists (0.2ms)[0m  SELECT 1 AS one FROM "products" WHERE "products"."title" = 'what' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35mProduct Exists (0.1ms)[0m  SELECT 1 AS one FROM "products" WHERE "products"."title" = 'what' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mProduct Exists (0.2ms)[0m  SELECT 1 AS one FROM "products" WHERE "products"."title" = 'what' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mProduct Exists (0.2ms)[0m  SELECT 1 AS one FROM "products" WHERE "products"."title" = 'what' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mProduct Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "products" WHERE "products"."title" = 'what' LIMIT 1[0m
+  [1m[35mSQL (69.8ms)[0m  INSERT INTO "products" ("created_at", "description", "price", "title", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Thu, 17 Oct 2013 12:22:30 UTC +00:00], ["description", "fsdfsfs"], ["price", #<BigDecimal:7f9922d63fe0,'0.44E2',9(36)>], ["title", "what"], ["updated_at", Thu, 17 Oct 2013 12:22:30 UTC +00:00]]
+  [1m[36m (9.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mProduct Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "products" WHERE "products"."title" = 'what' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mProduct Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "products" WHERE "products"."title" = 'what' LIMIT 1[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mProduct Exists (7.9ms)[0m  SELECT 1 AS one FROM "products" WHERE "products"."title" = 'what' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35mProduct Exists (0.2ms)[0m  SELECT 1 AS one FROM "products" WHERE "products"."title" = 'what' LIMIT 1
+  [1m[36mActiveRecord::SchemaMigration Load (6.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.6ms)[0m  [1mCREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "price" decimal(8,2), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (5.6ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (1.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20131017094616')[0m
+
+
+Started GET "/" for 127.0.0.1 at 2013-10-18 12:44:14 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/surendra/.rvm/gems/ruby-1.9.3-p448/gems/railties-4.0.0/lib/rails/templates/rails/welcome/index.html.erb (3.4ms)
+Completed 200 OK in 92ms (Views: 45.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-10-18 12:44:30 +0530
+Processing by StoreController#index as HTML
+  Rendered store/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 808ms (Views: 807.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-18 12:44:31 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-10-18 12:44:31 +0530
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2013-10-18 12:44:31 +0530
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2013-10-18 12:44:31 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-10-18 12:44:31 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-18 12:44:31 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-18 12:44:31 +0530
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2013-10-18 12:44:31 +0530
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2013-10-18 12:44:31 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-18 12:44:31 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2013-10-18 15:11:14 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StoreController#index as HTML
+  Rendered store/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 216ms (Views: 146.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-18 15:11:15 +0530
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2013-10-18 15:11:15 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-10-18 15:11:15 +0530
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2013-10-18 15:11:15 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-18 15:11:15 +0530
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2013-10-18 15:11:15 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-10-18 15:11:15 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-18 15:11:15 +0530
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2013-10-18 15:11:15 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-18 15:11:15 +0530
+
+
+Started GET "/products" for 127.0.0.1 at 2013-10-18 15:11:22 +0530
+Processing by ProductsController#index as HTML
+DEPRECATION WARNING: Calling #scope or #default_scope with a hash is deprecated. Please use a lambda containing a scope. E.g. scope :red, -> { where(color: 'red') }. (called from <class:Product> at /Volumes/Disk Image/depot/app/models/product.rb:2)
+  [1m[35mProduct Load (3.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  Rendered products/index.html.erb within layouts/application (54.9ms)
+Completed 200 OK in 85ms (Views: 67.6ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-18 15:11:22 +0530
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2013-10-18 15:11:22 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-10-18 15:11:22 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-10-18 15:11:22 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-18 15:11:22 +0530
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2013-10-18 15:11:22 +0530
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2013-10-18 15:11:22 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-18 15:11:22 +0530
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2013-10-18 15:11:22 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-18 15:11:22 +0530
+
+
+Started GET "/products/new" for 127.0.0.1 at 2013-10-18 15:11:25 +0530
+Processing by ProductsController#new as HTML
+  Rendered products/_form.html.erb (89.4ms)
+  Rendered products/new.html.erb within layouts/application (104.9ms)
+Completed 200 OK in 111ms (Views: 110.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2013-10-18 15:12:03 +0530
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7pucLRtheNBkAsfZ4zzV02o7rurBgLMrOWbXES9Sea4=", "product"=>{"title"=>"Bose", "description"=>"great speakers awesome", "price"=>"1000$"}, "commit"=>"Create Product"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered products/_form.html.erb (4.3ms)
+  Rendered products/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 35ms (Views: 30.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-18 15:12:03 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-10-18 15:12:03 +0530
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2013-10-18 15:12:03 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-18 15:12:03 +0530
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2013-10-18 15:12:03 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-10-18 15:12:03 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-18 15:12:03 +0530
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2013-10-18 15:12:03 +0530
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2013-10-18 15:12:03 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-18 15:12:03 +0530
+
+
+Started POST "/products" for 127.0.0.1 at 2013-10-18 15:12:11 +0530
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7pucLRtheNBkAsfZ4zzV02o7rurBgLMrOWbXES9Sea4=", "product"=>{"title"=>"Bose", "description"=>"great speakers awesome", "price"=>"1000"}, "commit"=>"Create Product"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (326.6ms)[0m  INSERT INTO "products" ("created_at", "description", "price", "title", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Fri, 18 Oct 2013 09:42:11 UTC +00:00], ["description", "great speakers awesome"], ["price", #<BigDecimal:7fe4c8db9688,'0.1E4',9(18)>], ["title", "Bose"], ["updated_at", Fri, 18 Oct 2013 09:42:11 UTC +00:00]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://surendra.com:3000/products/5
+Completed 302 Found in 334ms (ActiveRecord: 328.5ms)
+
+
+Started GET "/products/5" for 127.0.0.1 at 2013-10-18 15:12:12 +0530
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = ? ORDER BY title LIMIT 1  [["id", "5"]]
+  Rendered products/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 19ms (Views: 16.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-18 15:12:12 +0530
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2013-10-18 15:12:12 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-10-18 15:12:12 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-18 15:12:12 +0530
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2013-10-18 15:12:12 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-18 15:12:12 +0530
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2013-10-18 15:12:12 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-18 15:12:12 +0530
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2013-10-18 15:12:12 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-10-18 15:12:12 +0530
+
+
+Started GET "/products" for 127.0.0.1 at 2013-10-18 15:12:15 +0530
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  Rendered products/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-10-18 15:41:57 +0530
+Processing by StoreController#index as HTML
+  Rendered store/index.html.erb within layouts/application (24.6ms)
+Completed 500 Internal Server Error in 37ms
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    3: <% end %>
+    4: <h1> Your Catalog </h1>
+    5: 
+    6: <% @product.each do |product| %>
+    7: 	<div class="entry">
+    8: 		<h3><%= product.title %></h3>
+    9: 		<%=sanitize product.description %>
+  app/views/store/index.html.erb:6:in `_app_views_store_index_html_erb___2501543159050266906_70310313779300'
+
+
+  Rendered /Users/surendra/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /Users/surendra/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /Users/surendra/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (19.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-10-18 15:42:49 +0530
+Processing by StoreController#index as HTML
+  Rendered store/index.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 4ms
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    3: <% end %>
+    4: <h1> Your Catalog </h1>
+    5: 
+    6: <% @products.each do |product| %>
+    7: 	<div class="entry">
+    8: 		<h3><%= product.title %></h3>
+    9: 		<%=sanitize product.description %>
+  app/views/store/index.html.erb:6:in `_app_views_store_index_html_erb___2501543159050266906_70310314197240'
+
+
+  Rendered /Users/surendra/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /Users/surendra/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /Users/surendra/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.6ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2013-10-18 15:47:46 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+DEPRECATION WARNING: Calling #scope or #default_scope with a hash is deprecated. Please use a lambda containing a scope. E.g. scope :red, -> { where(color: 'red') }. (called from <class:Product> at /Volumes/Disk Image/depot/app/models/product.rb:2)
+  [1m[35mProduct Load (0.5ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  Rendered products/index.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 268ms (Views: 220.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-18 15:47:47 +0530
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2013-10-18 15:47:47 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-10-18 15:47:47 +0530
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2013-10-18 15:47:47 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-18 15:47:47 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-18 15:47:47 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-10-18 15:47:47 +0530
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2013-10-18 15:47:47 +0530
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2013-10-18 15:47:47 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-18 15:47:47 +0530
+
+
+Started GET "/products/2" for 127.0.0.1 at 2013-10-18 15:47:57 +0530
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = ? ORDER BY title LIMIT 1[0m  [["id", "2"]]
+  Rendered products/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 23ms (Views: 20.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2013-10-18 15:49:18 +0530
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  Rendered products/index.html.erb within layouts/application (25.5ms)
+Completed 200 OK in 42ms (Views: 40.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-18 15:49:18 +0530
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2013-10-18 15:49:18 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-10-18 15:49:18 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-10-18 15:49:18 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-18 15:49:18 +0530
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2013-10-18 15:49:18 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-18 15:49:18 +0530
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2013-10-18 15:49:18 +0530
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2013-10-18 15:49:18 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-18 15:49:18 +0530
+
+
+Started DELETE "/products/3" for 127.0.0.1 at 2013-10-18 15:49:38 +0530
+Processing by ProductsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"7pucLRtheNBkAsfZ4zzV02o7rurBgLMrOWbXES9Sea4=", "id"=>"3"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = ? ORDER BY title LIMIT 1[0m  [["id", "3"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (52.0ms)[0m  [1mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 3]]
+  [1m[35m (1.7ms)[0m  commit transaction
+Redirected to http://surendra.com:3000/products
+Completed 302 Found in 59ms (ActiveRecord: 53.9ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2013-10-18 15:49:39 +0530
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  Rendered products/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 27ms (Views: 26.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2013-10-18 15:49:39 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-18 15:49:39 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-10-18 15:49:39 +0530
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2013-10-18 15:49:39 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-18 15:49:39 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-18 15:49:39 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-10-18 15:49:39 +0530
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2013-10-18 15:49:39 +0530
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2013-10-18 15:49:39 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-18 15:49:39 +0530
+
+
+Started DELETE "/products/2" for 127.0.0.1 at 2013-10-18 15:49:41 +0530
+Processing by ProductsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"7pucLRtheNBkAsfZ4zzV02o7rurBgLMrOWbXES9Sea4=", "id"=>"2"}
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = ? ORDER BY title LIMIT 1  [["id", "2"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "products" WHERE "products"."id" = ?  [["id", 2]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://surendra.com:3000/products
+Completed 302 Found in 6ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2013-10-18 15:49:41 +0530
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  Rendered products/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-18 15:49:41 +0530
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2013-10-18 15:49:41 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-10-18 15:49:41 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-18 15:49:41 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-18 15:49:41 +0530
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2013-10-18 15:49:41 +0530
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2013-10-18 15:49:41 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-10-18 15:49:41 +0530
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2013-10-18 15:49:41 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-18 15:49:41 +0530
+
+
+Started GET "/products" for 127.0.0.1 at 2013-10-18 15:49:44 +0530
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  Rendered products/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2013-10-18 15:49:45 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-18 15:49:45 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-10-18 15:49:45 +0530
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2013-10-18 15:49:45 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-18 15:49:45 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-18 15:49:45 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-10-18 15:49:45 +0530
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2013-10-18 15:49:45 +0530
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2013-10-18 15:49:45 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-18 15:49:45 +0530
+
+
+Started GET "/products" for 127.0.0.1 at 2013-10-18 15:49:52 +0530
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  Rendered products/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-18 15:49:52 +0530
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2013-10-18 15:49:52 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-18 15:49:52 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-10-18 15:49:52 +0530
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2013-10-18 15:49:52 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-10-18 15:49:52 +0530
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2013-10-18 15:49:52 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-18 15:49:52 +0530
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2013-10-18 15:49:52 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-18 15:49:52 +0530
+
+
+Started GET "/products" for 127.0.0.1 at 2013-10-18 15:55:06 +0530
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  Rendered products/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 19ms (Views: 17.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-18 15:55:06 +0530
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2013-10-18 15:55:06 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-10-18 15:55:06 +0530
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2013-10-18 15:55:06 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-18 15:55:06 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-10-18 15:55:06 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-18 15:55:06 +0530
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2013-10-18 15:55:06 +0530
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2013-10-18 15:55:06 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-18 15:55:06 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (4.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCarts (20131018103342)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "carts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (2.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20131018103342"]]
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateLineItems (20131018103917)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateLineItems (20131018104100)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "line_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer, "cart_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20131018104100"]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mLineItem Load (0.5ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."id" = ? LIMIT 1[0m  [["id", "bose"]]
